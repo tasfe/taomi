@@ -1,1 +1,0 @@
-CREATE TABLE category (cid TEXT PRIMARY KEY, parent_cid TEXT, name TEXT, is_parent BOOLEAN)
