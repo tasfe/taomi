@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BeanLoader xmlns="org.swizframework.util.*"
+			xmlns:mx="http://www.adobe.com/2006/mxml"
+			xmlns:controller="org.taomi.swiz.controller.*"
+			xmlns:utils="org.taomi.utils.*"
+			xmlns:s="library://ns.adobe.com/flex/spark">
+	<mx:Script>
+		<![CDATA[
+			public static const APP_KEY:String="12010519";
+
+			public static const APP_SECRET:String="e14e1b1c6bd3d6cbef03cfe4b2e6c2a3";
+
+			public static const SANDBOX_URL:String="http://gw.api.taobao.com/router/rest";
+
+			public static const GET_SESSION_CONTAINER_URL:String="http://container.api.taobao.com/container";
+
+			public static const PID:String="mm_10865336_0_0";
+
+			public static const NICK:String="logicigam";
+			
+			public static const PAGE_SIZE:int=40;
+		]]>
+	</mx:Script>
+	<mx:HTTPService id="top_service"
+					rootURL="{SANDBOX_URL}"
+					resultFormat="e4x"
+					method="GET"
+					showBusyCursor="true"
+					url="{SANDBOX_URL}"
+					makeObjectsBindable="true"/>
+
+	<controller:ItemController id="itemController"/>
+	<controller:SysdataController id="sysdataController"/>
+	<utils:APIUtils id="apiutils"/>
+	<utils:DBUtils id="dbutils"/>
+</BeanLoader>

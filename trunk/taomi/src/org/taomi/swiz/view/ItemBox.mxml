@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+		 xmlns:s="library://ns.adobe.com/flex/spark"
+		 xmlns:mx="library://ns.adobe.com/flex/halo"
+		 height="80"
+		 width="409"
+		 click="group1_clickHandler(event)"
+		 >
+	<fx:Script>
+		<![CDATA[
+			import flash.net.navigateToURL;
+			[Bindable]
+			public var data:Object;
+			protected function group1_clickHandler(event:MouseEvent):void
+			{
+				navigateToURL(new URLRequest(data.click_url),
+					"_blank");
+			}
+		]]>
+	</fx:Script>
+	<mx:Image x="0"
+			  y="0"
+			  source="{data.pic_url}"
+			  width="80"
+			  height="80"/>
+	<mx:Label text="{data.title}"
+			  width="320"
+			  x="81"
+			  y="7"
+			  height="23"/>
+	<mx:Label text="一口价："
+			  x="282"
+			  y="54"
+			  width="117"/>
+	<mx:Label text="{data.price}"
+			  x="326"
+			  y="54"
+			  width="77"
+			  color="#FF9000"
+			  fontWeight="bold"/>
+	<mx:Label text="卖家：{data.nick}"
+			  x="82"
+			  y="59"/>
+	<mx:Label text="当月销量：{data.commission_num}"
+			  x="82"
+			  y="41"/>
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+</s:Group>
